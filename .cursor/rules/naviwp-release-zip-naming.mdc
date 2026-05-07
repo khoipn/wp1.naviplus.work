@@ -1,0 +1,13 @@
+---
+description: Enforce NaviWP release zip naming format
+alwaysApply: true
+---
+
+# NaviWP Release Zip Naming
+
+- When creating a distributable plugin zip for this project, use this exact filename format:
+  `naviplus-menu-builder-v<release_number>-<YYYYMMDD>.zip`
+- `release_number` must increase sequentially each build (`v5`, `v6`, `v7`, ...), independent of date.
+- Use the latest existing build number and increment by 1 for the next package.
+- Keep the zip root folder slug as `navi-menu-navigation-builder/` for WordPress.org compatibility.
+- Exclude internal/dev files from release zips (for example `golive.md`, `.git*`, `.DS_Store`).
