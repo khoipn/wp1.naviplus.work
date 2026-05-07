@@ -1,0 +1,11 @@
+---
+description: Restrict assistant work to NaviWP plugin scope
+alwaysApply: true
+---
+
+# NaviWP Work Scope
+
+- Primary working scope is `wp-content/plugins/naviwp`.
+- Do not edit files outside this plugin unless the user explicitly requests it.
+- If a task appears to require cross-project changes, stop and ask for confirmation first.
+- Keep commits and diffs focused on NaviWP plugin files whenever possible.
