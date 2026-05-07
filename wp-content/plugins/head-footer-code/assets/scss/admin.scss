@@ -1,0 +1,88 @@
+$color-blue: #0073aa;
+$color-red: #d63638;
+
+#head_footer_code_settings {
+    .wp-heading-inline {
+        .ver {
+            font-size: 0.8rem;
+            line-height: 2rem;
+        }
+        .actions {
+            display: inline;
+        }
+    }
+    .form-table {
+        .warn {
+            color: $color-red;
+            i {
+                font-style: normal;
+                &::before {
+                    content: "⚠️ ";
+                }
+            }
+        }
+        div.description {
+            p.notice {
+                padding-block: 0.5em;
+                margin: 0.25em 0;
+            }
+        }
+    }
+}
+
+.fixed .column-hfc {
+    width: 6em;
+
+    .hfc-badges-wrapper {
+        border-radius: 3px;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+
+        &.hfc-append {
+            background-color: $color-blue;
+        }
+        &.hfc-replace {
+            background-color: $color-red;
+        }
+
+        .badge {
+            border: 1px solid rgba(0, 0, 0, .1);
+            color: #fff;
+            // display: block;
+            flex: 1 1 auto;
+            font-size: 12px;
+            min-width: 1.4em;
+            text-align: center;
+            text-decoration: none;
+            text-shadow: 0 0 3px rgba(0, 0, 0, .7);
+            -webkit-user-select: none;
+            user-select: none;
+
+        }
+    }
+}
+
+// HFC Metabox
+#auhfc-head-footer-code {
+    .form-table {
+        tr {
+            display: flex;
+            flex-direction: column;
+            margin-top: 1rem;
+            th, td {
+                padding: 0;
+            }
+            .notice-warning {
+                max-width: 100%;
+                margin-inline: 0;
+            }
+            textarea {
+                width: 100%;
+            }
+        }
+    }
+    .CodeMirror {
+        height: 150px;
+    }
+}

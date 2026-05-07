@@ -1,0 +1,18 @@
+---
+description: Naviplus Menu Builder (alias Navi+ Menu Builder) — do not alter embed integration without explicit spec
+globs: wp-content/plugins/naviwp/**/*.php
+alwaysApply: false
+---
+
+# Naviplus Menu Builder / Navi+ Menu Builder embed (naviwp plugin)
+
+**Product name:** Naviplus Menu Builder. **Shorter alias** (prose, compact UI): Navi+ Menu Builder. Constants: `NAVIWP_PRODUCT_NAME`, `NAVIWP_PRODUCT_NAME_ALIAS` in `includes/init.php`.
+
+When editing `wp-content/plugins/naviwp/`, especially `includes/class-naviwp-frontend.php` and `includes/init.php`:
+
+- **Do not** “improve” the Navi+ Menu Builder integration on your own: no moving the loader to `wp_footer`, no replacing inline `push` + `start.js` with `wp_enqueue_script` alone, no reordering mount node vs scripts, unless there is an explicit written spec from the product owner (Naviplus Menu Builder / Navi+ Menu Builder).
+- **Shortcode names**: `[naviwp]` is the preferred public tag; `[naviplus]` is a **legacy alias** only (same handler, same behavior). Renaming for docs/wording is fine; removing the alias breaks existing sites unless deprecated on purpose.
+- **Mount + loader**: For shortcodes, output must remain: `div#%embed_id%-container` then immediately the same push + `start.js`, implemented with `wp_register_script` / `wp_add_inline_script` / `wp_enqueue_script` and `wp_print_scripts()` at that spot (Plugin Check forbids raw `<script>` tags in PHP source).
+- **Payload**: Keys and semantics must match `NAVIWP_EMBED_*` in `init.php` and `https://live.naviplus.app/start.js`.
+
+If a change is requested, confirm it against Naviplus Menu Builder / Navi+ Menu Builder documentation or stakeholder approval before editing.

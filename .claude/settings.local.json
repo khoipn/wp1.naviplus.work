@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wp --path=/var/www/wp1.naviplus.work option get navi_install_token 2>&1)",
+      "Bash(find /var/www -name \"*.js\" -path \"*/naviplus/*\" 2>/dev/null | head -20; find /var/www -name \"*.js.php\" 2>/dev/null | head -20)",
+      "Bash(php -l /var/www/wp1.naviplus.work/wp-content/plugins/naviwp/includes/class-admin.php && php -l /var/www/wp1.naviplus.work/wp-content/plugins/naviwp/config.php)",
+      "Bash(php -l /var/www/wp1.naviplus.work/wp-content/plugins/naviwp/includes/class-admin.php)",
+      "Bash(php -l /var/www/wp1.naviplus.work/wp-content/plugins/naviwp/includes/class-admin.php && php -l /var/www/wp1.naviplus.work/wp-content/plugins/naviwp/includes/class-frontend.php)",
+      "Bash(claude doctor:*)",
+      "Bash(find /var/www/live -type f -name \"*.php\" 2>/dev/null | grep -i \"authen\\\\|wordpress\\\\|register\" | head -20)",
+      "Bash(find /var/www/live -path \"*/naviplus/*\" -name \"*.php\" 2>/dev/null | head -30)",
+      "Bash(php -r \"echo base64_encode\\('NAVI784167 | wp_NAVI784167_admin@site.com | wp1.naviplus.work | 1773212949'\\);\")",
+      "Bash(mysql --version 2>/dev/null || echo \"no mysql cli\"; cat /var/www/wp1.naviplus.work/wp-config.php 2>/dev/null | grep -E \"DB_\\(NAME|USER|PASSWORD|HOST\\)\" | head -10)",
+      "Bash(grep -n \"signup\\\\|register\\\\|create.*account\" /var/www/wp1.naviplus.work/wp-content/themes/*/functions.php 2>/dev/null | head -20)",
+      "Bash(ls -d /var/www/wp1.naviplus.work/wp-content/plugins/*/ 2>/dev/null | head -20)",
+      "Bash(ls -d /var/www/wp1.naviplus.work/wp-content/themes/*/ 2>/dev/null)",
+      "Bash(grep -r \"restaurant\\\\|business\\\\|menu.*create\\\\|first.*screen\" /var/www/wp1.naviplus.work/wp-content/plugins/ --include=\"*.php\" 2>/dev/null | head -20)",
+      "Bash(find /var/www/wp1.naviplus.work -type f \\\\\\( -name \"*setup*\" -o -name \"*wizard*\" -o -name \"*onboard*\" -o -name \"*register*\" \\\\\\) -not -path \"*/wp-admin/*\" -not -path \"*/wp-includes/*\" 2>/dev/null | head -30)",
+      "Bash(find /var/www/wp1.naviplus.work -type f -name \"*.html\" -o -name \"*.htm\" 2>/dev/null | grep -v \"tools\\\\|wp-admin\\\\|wp-includes\" | head -20)",
+      "Bash(grep -n \"wp_nonce_field\\\\|<form\\\\|method.*POST\\\\|method.*GET\" /var/www/wp1.naviplus.work/wp-content/plugins/naviwp/includes/*.php)",
+      "Bash(grep -B2 -A2 \"isset.*\\\\$_POST\\\\|isset.*\\\\$_GET\\\\|isset.*\\\\$_REQUEST\" /var/www/wp1.naviplus.work/wp-content/plugins/naviwp/includes/class-admin.php | head -60)"
+    ]
+  }
+}
